@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import { Cloud } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = ["Home", "About", "Skills", "Projects", "Internships", "Journey", "Certifications", "Contact"];
@@ -27,7 +27,7 @@ export function Navbar() {
               transition={{ duration: 5, repeat: Infinity }}
               className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--blink-yellow)] shadow-soft"
             >
-              <Zap className="h-4 w-4 fill-[var(--blink-green-deep)] text-[var(--blink-green-deep)]" strokeWidth={2} />
+              <Cloud className="h-4 w-4 fill-[var(--blink-green-deep)] text-[var(--blink-green-deep)]" strokeWidth={2} />
             </motion.div>
             <span className="font-display text-lg font-bold tracking-tight">
               <span className="text-[var(--blink-green-deep)]">naveen</span>

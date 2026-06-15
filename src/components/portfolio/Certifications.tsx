@@ -8,7 +8,7 @@ const certs = [
   { name: "Power BI for Beginners", org: "Microsoft · Simplilearn", accent: "yellow" },
   { name: "Python Programming", org: "GeeksforGeeks", accent: "green" },
   { name: "Digital Applications Fundamentals (STEM)", org: "FutureSkills Prime", accent: "yellow" },
-  { name: "Microsoft Learnathon ’25 — AI & GenAI", org: "Microsoft", accent: "green" },
+  { name: "Microsoft Learnathon '25 — AI & GenAI", org: "Microsoft", accent: "green" },
 ];
 
 export function Certifications() {

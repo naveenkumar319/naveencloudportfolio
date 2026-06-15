@@ -5,7 +5,7 @@ const cards = [
   { icon: Cloud, title: "Cloud Curious", desc: "Learning AWS fundamentals — EC2, S3, IAM and cloud security basics." },
   { icon: Code2, title: "Builder", desc: "Comfortable in Python, Java, C/C++ — I learn fastest by shipping small projects." },
   { icon: GraduationCap, title: "Data Science Student", desc: "B.Tech CSE (DS) at KKR & KSR — CGPA 8.3/10, currently in 3rd year." },
-  { icon: Lightbulb, title: "Quick Learner", desc: "Microsoft Learnathon ’25, GenAI literacy, ML onramp — always picking up the next thing." },
+  { icon: Lightbulb, title: "Quick Learner", desc: "Microsoft Learnathon '25, GenAI literacy, ML onramp — always picking up the next thing." },
 ];
 
 export function About() {

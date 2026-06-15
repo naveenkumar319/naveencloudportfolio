@@ -106,13 +106,13 @@ export function Projects() {
                         <g key={idx}>
                           {idx > 0 && (
                             <line x1={x - 56 + 16} y1={30} x2={x - 16} y2={30}
-                              stroke="oklch(0.55 0.18 145 / 0.55)" strokeWidth="1.5"
+                              stroke="oklch(0.6 0.14 245 / 0.55)" strokeWidth="1.5"
                               strokeDasharray="3 3">
                               <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite" />
                             </line>
                           )}
-                          <circle cx={x} cy={30} r="15" fill="oklch(1 0 0 / 0.85)" stroke="oklch(0.55 0.18 145 / 0.7)" />
-                          <text x={x} y={33} textAnchor="middle" fontSize="8" fill="oklch(0.3 0.1 145)" fontFamily="monospace" fontWeight="600">{label}</text>
+                          <circle cx={x} cy={30} r="15" fill="oklch(1 0 0 / 0.85)" stroke="oklch(0.6 0.14 245 / 0.7)" />
+                          <text x={x} y={33} textAnchor="middle" fontSize="8" fill="oklch(0.3 0.08 245)" fontFamily="monospace" fontWeight="600">{label}</text>
                         </g>
                       );
                     })}
