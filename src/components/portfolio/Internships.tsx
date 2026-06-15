@@ -26,7 +26,7 @@ export function Internships() {
           className="mb-12"
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-mono font-semibold text-[var(--blink-green)]">
-            04 — INTERNSHIPS
+            {"\n"}
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
             My <span className="text-gradient-cyan">internships</span>.

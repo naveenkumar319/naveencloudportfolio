@@ -124,7 +124,9 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--blink-green)] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--blink-green)]" />
             </span>
-            <span className="font-medium text-foreground/70">Open to internships & entry-level roles</span>
+            <span className="font-medium text-foreground/70">
+              {"\n"}
+            </span>
           </motion.div>
 
           <motion.h1
@@ -135,9 +137,7 @@ export function Hero() {
           >
             Hi, I'm <span className="text-gradient-orange">Naveen</span>.
             <br />
-            Learning the <span className="text-gradient-cyan">cloud</span>,
-            <br />
-            one project at a time.
+            Learning the <span className="text-gradient-cyan">{"\u00a0\u00a0"}</span>.
           </motion.h1>
 
           <motion.p
@@ -147,6 +147,7 @@ export function Hero() {
             className="mt-6 text-lg text-foreground/70 md:text-xl"
           >
             I'm an <Typer />
+            {"\n"}
           </motion.p>
 
           <motion.p
