@@ -16,11 +16,11 @@ export function Footer() {
             <Zap className="h-4 w-4 fill-[var(--blink-green-deep)] text-[var(--blink-green-deep)]" />
           </div>
           <span className="font-display font-bold">
-            <span className="text-[var(--blink-green-deep)]">naveen</span>.cloud
+            <span className="text-[var(--blink-green-deep)]">naveen</span>
           </span>
         </div>
         <p className="text-xs font-medium text-foreground/60">
-          © {new Date().getFullYear()} Akiti Naveenkumar · Built with ☁️ & ⚡ from Guntur, IN.
+          © {new Date().getFullYear()} Akiti Naveenkumar · Built with\u00a0 & ⚡ from Guntur, IN.
         </p>
       </div>
     </footer>
