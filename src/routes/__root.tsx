@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "vs code" },
+      { name: "description", content: "A modern, animated portfolio showcasing AWS Cloud & DevOps expertise with a futuristic, dashboard-style interface." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "vs code" },
+      { property: "og:description", content: "A modern, animated portfolio showcasing AWS Cloud & DevOps expertise with a futuristic, dashboard-style interface." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "vs code" },
+      { name: "twitter:description", content: "A modern, animated portfolio showcasing AWS Cloud & DevOps expertise with a futuristic, dashboard-style interface." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c86378d-aff7-4007-883f-4246a5a73237/id-preview-238ce46f--0c806e6f-6b28-4d74-a02d-5f1d5da24759.lovable.app-1781515482766.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c86378d-aff7-4007-883f-4246a5a73237/id-preview-238ce46f--0c806e6f-6b28-4d74-a02d-5f1d5da24759.lovable.app-1781515482766.png" },
     ],
     links: [
       {
