@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const items = [
+const internships = [
   {
     year: "2025",
     role: "Web Development Intern",
@@ -13,6 +13,9 @@ const items = [
     co: "CodeC Technologies",
     desc: "Practical exposure to industry-standard tools and real-world project execution.",
   },
+];
+
+const education = [
   {
     year: "2023 — 2027",
     role: "B.Tech · CSE (Data Science)",
@@ -33,6 +36,32 @@ const items = [
   },
 ];
 
+function TimelineItem({ it, i, offset = 0 }: { it: typeof internships[0]; i: number; offset?: number }) {
+  return (
+    <motion.div
+      key={it.role + it.year}
+      initial={{ opacity: 0, x: i % 2 ? 30 : -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.1 }}
+      className={`relative pl-12 md:grid md:grid-cols-2 md:gap-8 md:pl-0 ${i % 2 ? "md:[&>div]:col-start-2" : ""}`}
+    >
+      <div className="absolute left-4 top-5 -translate-x-1/2 md:left-1/2">
+        <div className="relative">
+          <div className="absolute inset-0 animate-ping rounded-full bg-[var(--blink-green)] opacity-50" />
+          <div className="relative h-3 w-3 rounded-full bg-[var(--blink-green)] ring-4 ring-[var(--background)]" />
+        </div>
+      </div>
+      <div className={`glass rounded-2xl p-6 ${i % 2 ? "" : "md:text-right"}`}>
+        <div className="font-mono text-xs font-bold text-[var(--blink-yellow-deep)]">{it.year}</div>
+        <div className="mt-1 font-display text-lg font-bold">{it.role}</div>
+        <div className="text-sm font-medium text-foreground/65">{it.co}</div>
+        <p className="mt-3 text-sm text-foreground/65">{it.desc}</p>
+      </div>
+    </motion.div>
+  );
+}
+
 export function Experience() {
   return (
     <section id="experience" className="relative py-32">
@@ -51,32 +80,34 @@ export function Experience() {
           </h2>
         </motion.div>
 
+        <div className="relative mb-16">
+          <div className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-[var(--blink-green)] via-[var(--blink-yellow-deep)] to-transparent md:left-1/2" />
+
+          <div className="mb-6 flex items-center gap-3 pl-12 md:pl-0 md:justify-center">
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-transparent to-[var(--blink-yellow)]" />
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--blink-yellow)]">Internships</span>
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-[var(--blink-yellow)]" />
+          </div>
+
+          <div className="space-y-8">
+            {internships.map((it, i) => (
+              <TimelineItem key={it.role + it.year} it={it} i={i} />
+            ))}
+          </div>
+        </div>
+
         <div className="relative">
           <div className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-[var(--blink-green)] via-[var(--blink-yellow-deep)] to-transparent md:left-1/2" />
 
+          <div className="mb-6 flex items-center gap-3 pl-12 md:pl-0 md:justify-center">
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-transparent to-[var(--blink-green)]" />
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--blink-green)]">Education</span>
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-[var(--blink-green)]" />
+          </div>
+
           <div className="space-y-8">
-            {items.map((it, i) => (
-              <motion.div
-                key={it.role + it.year}
-                initial={{ opacity: 0, x: i % 2 ? 30 : -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`relative pl-12 md:grid md:grid-cols-2 md:gap-8 md:pl-0 ${i % 2 ? "md:[&>div]:col-start-2" : ""}`}
-              >
-                <div className="absolute left-4 top-5 -translate-x-1/2 md:left-1/2">
-                  <div className="relative">
-                    <div className="absolute inset-0 animate-ping rounded-full bg-[var(--blink-green)] opacity-50" />
-                    <div className="relative h-3 w-3 rounded-full bg-[var(--blink-green)] ring-4 ring-[var(--background)]" />
-                  </div>
-                </div>
-                <div className={`glass rounded-2xl p-6 ${i % 2 ? "" : "md:text-right"}`}>
-                  <div className="font-mono text-xs font-bold text-[var(--blink-yellow-deep)]">{it.year}</div>
-                  <div className="mt-1 font-display text-lg font-bold">{it.role}</div>
-                  <div className="text-sm font-medium text-foreground/65">{it.co}</div>
-                  <p className="mt-3 text-sm text-foreground/65">{it.desc}</p>
-                </div>
-              </motion.div>
+            {education.map((it, i) => (
+              <TimelineItem key={it.role + it.year} it={it} i={i} offset={internships.length} />
             ))}
           </div>
         </div>
