@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Server, Database, Globe, Box, Network, Zap } from "lucide-react";
+import { ArrowRight, Download, Cloud, Code2, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
+import naveen from "@/assets/naveen.png.asset.json";
 
-const titles = ["AWS Cloud Engineer", "DevOps Enthusiast", "Cloud Architect", "Automation Engineer"];
+const titles = [
+  "Aspiring Cloud Engineer",
+  "AWS Learner",
+  "Data Science Student",
+  "Future DevOps Engineer",
+];
 
 function Typer() {
   const [i, setI] = useState(0);
@@ -27,18 +33,18 @@ function Typer() {
   return (
     <span className="text-gradient-cyan">
       {text}
-      <span className="ml-1 inline-block h-7 w-[3px] animate-pulse bg-[var(--cyan-glow)] align-middle md:h-10" />
+      <span className="ml-1 inline-block h-7 w-[3px] animate-pulse bg-[var(--blink-green)] align-middle md:h-10" />
     </span>
   );
 }
 
 const services = [
-  { icon: Server, label: "EC2", x: "10%", y: "20%" },
-  { icon: Database, label: "S3", x: "85%", y: "15%" },
-  { icon: Zap, label: "Lambda", x: "75%", y: "70%" },
-  { icon: Network, label: "VPC", x: "15%", y: "75%" },
-  { icon: Globe, label: "Route53", x: "50%", y: "10%" },
-  { icon: Box, label: "ECS", x: "45%", y: "85%" },
+  { icon: Cloud, label: "AWS", x: "10%", y: "20%" },
+  { icon: Database, label: "SQL", x: "85%", y: "15%" },
+  { icon: Code2, label: "Python", x: "75%", y: "70%" },
+  { icon: BarChart3, label: "PowerBI", x: "15%", y: "75%" },
+  { icon: Cpu, label: "ML", x: "50%", y: "10%" },
+  { icon: Sparkles, label: "GenAI", x: "45%", y: "85%" },
 ];
 
 function ArchitectureCanvas() {
@@ -47,9 +53,9 @@ function ArchitectureCanvas() {
       <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="oklch(0.82 0.18 210)" stopOpacity="0" />
-            <stop offset="50%" stopColor="oklch(0.82 0.18 210)" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="oklch(0.82 0.18 210)" stopOpacity="0" />
+            <stop offset="0%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0" />
+            <stop offset="50%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[
@@ -63,7 +69,7 @@ function ArchitectureCanvas() {
           ["85%", "15%", "15%", "75%"],
         ].map(([x1, y1, x2, y2], i) => (
           <g key={i}>
-            <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="oklch(0.82 0.18 210 / 0.15)" strokeWidth="1" />
+            <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="oklch(0.55 0.18 145 / 0.18)" strokeWidth="1" />
             <line
               x1={x1} y1={y1} x2={x2} y2={y2}
               stroke="url(#line)"
@@ -89,10 +95,10 @@ function ArchitectureCanvas() {
             transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-2xl bg-[var(--cyan-glow)] opacity-30 blur-xl" />
+            <div className="absolute inset-0 rounded-2xl bg-[var(--blink-yellow)] opacity-60 blur-xl" />
             <div className="glass relative flex h-16 w-16 flex-col items-center justify-center rounded-2xl">
-              <s.icon className="h-5 w-5 text-[var(--cyan-glow)]" strokeWidth={1.5} />
-              <span className="mt-0.5 text-[9px] font-medium text-muted-foreground">{s.label}</span>
+              <s.icon className="h-5 w-5 text-[var(--blink-green)]" strokeWidth={1.8} />
+              <span className="mt-0.5 text-[9px] font-semibold text-foreground/70">{s.label}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -115,10 +121,10 @@ export function Hero() {
             className="glass mb-6 inline-flex w-fit items-center gap-2 rounded-full px-4 py-1.5 text-xs"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--cyan-glow)] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--cyan-glow)]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--blink-green)] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--blink-green)]" />
             </span>
-            <span className="text-muted-foreground">Available for cloud projects</span>
+            <span className="font-medium text-foreground/70">Open to internships & entry-level roles</span>
           </motion.div>
 
           <motion.h1
@@ -127,29 +133,30 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl"
           >
-            Architecting the
+            Hi, I'm <span className="text-gradient-orange">Naveen</span>.
             <br />
-            <span className="text-gradient-orange">cloud</span>, one
+            Learning the <span className="text-gradient-cyan">cloud</span>,
             <br />
-            deployment at a time.
+            one project at a time.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-lg text-muted-foreground md:text-xl"
+            className="mt-6 text-lg text-foreground/70 md:text-xl"
           >
-            I'm <Typer />
+            I'm an <Typer />
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-4 max-w-xl text-base text-muted-foreground/80"
+            className="mt-4 max-w-xl text-base text-foreground/60"
           >
-            Designing, automating and scaling resilient infrastructure on AWS — from serverless pipelines to multi-region Kubernetes clusters.
+            B.Tech CSE (Data Science) student at KKR & KSR Institute — currently exploring AWS,
+            Python and data analytics. I love building small things end-to-end and shipping them.
           </motion.p>
 
           <motion.div
@@ -160,14 +167,14 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-xl bg-[var(--aws-orange)] px-6 py-3 text-sm font-semibold text-[var(--deep-navy)] transition-all hover:glow-orange"
+              className="group inline-flex items-center gap-2 rounded-xl bg-[var(--blink-green)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-all hover:glow-cyan"
             >
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="glass inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-xl bg-[var(--blink-yellow)] px-6 py-3 text-sm font-semibold text-[var(--deep-navy)] transition-all hover:glow-orange"
             >
               <Download className="h-4 w-4" /> Resume
             </a>
@@ -180,21 +187,21 @@ export function Hero() {
             className="mt-12 grid max-w-md grid-cols-3 gap-6"
           >
             {[
-              { v: "50+", l: "Deployments" },
-              { v: "8+", l: "AWS Services" },
-              { v: "99.9%", l: "Uptime" },
+              { v: "8.3", l: "CGPA" },
+              { v: "6+", l: "Certificates" },
+              { v: "2", l: "Internships" },
             ].map((s) => (
               <div key={s.l}>
                 <div className="text-2xl font-bold text-gradient-cyan">{s.v}</div>
-                <div className="text-xs text-muted-foreground">{s.l}</div>
+                <div className="text-xs font-medium text-foreground/60">{s.l}</div>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Profile card */}
+        {/* Profile card with photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hidden items-center justify-center lg:flex"
@@ -204,27 +211,52 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            <div className="absolute -inset-8 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.82_0.18_210),oklch(0.74_0.2_55),oklch(0.65_0.2_240),oklch(0.82_0.18_210))] opacity-40 blur-2xl" />
-            <div className="relative h-72 w-72 rounded-full p-1">
-              <div className="absolute inset-0 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.82_0.18_210),oklch(0.74_0.2_55),oklch(0.65_0.2_240),oklch(0.82_0.18_210))]" />
-              <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[var(--deep-navy)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.3_0.15_220),transparent_70%)]" />
-                <div className="relative font-display text-7xl font-bold text-gradient-cyan">AC</div>
+            <div className="absolute -inset-8 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.87_0.18_92),oklch(0.55_0.18_145),oklch(0.78_0.2_80),oklch(0.87_0.18_92))] opacity-60 blur-2xl" />
+            <div className="relative h-80 w-80 rounded-full p-[3px]">
+              <div className="absolute inset-0 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.87_0.18_92),oklch(0.55_0.18_145),oklch(0.78_0.2_80),oklch(0.87_0.18_92))]" />
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-[var(--blink-yellow)] ring-4 ring-white/60">
+                <img
+                  src={naveen.url}
+                  alt="Akiti Naveenkumar"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
-            <div className="glass mt-6 rounded-2xl px-5 py-3 text-center">
-              <div className="text-sm font-semibold">Alex Cloud</div>
-              <div className="text-xs text-muted-foreground">Sr. Cloud & DevOps Engineer</div>
+
+            {/* Floating badges */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="glass absolute -right-4 top-10 rounded-2xl px-3 py-2 text-xs font-semibold shadow-soft"
+            >
+              <div className="flex items-center gap-2">
+                <Cloud className="h-4 w-4 text-[var(--blink-green)]" />
+                AWS Learner
+              </div>
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="glass absolute -left-6 bottom-20 rounded-2xl px-3 py-2 text-xs font-semibold shadow-soft"
+            >
+              <div className="flex items-center gap-2">
+                <Code2 className="h-4 w-4 text-[var(--blink-green)]" />
+                B.Tech · CSE (DS)
+              </div>
+            </motion.div>
+
+            <div className="glass-strong mt-6 rounded-2xl px-5 py-3 text-center">
+              <div className="font-display text-base font-bold">Akiti Naveenkumar</div>
+              <div className="text-xs font-medium text-foreground/60">Aspiring Cloud Engineer · Guntur, IN</div>
             </div>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll hint */}
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-muted-foreground"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-medium text-foreground/50"
       >
         scroll to explore ↓
       </motion.div>

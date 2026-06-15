@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Cloud } from "lucide-react";
+import { Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const links = ["Home", "About", "Skills", "Projects", "Certifications", "Experience", "Contact"];
+const links = ["Home", "About", "Skills", "Projects", "Experience", "Certifications", "Contact"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,20 +19,19 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
     >
-      <div className={`mx-auto max-w-6xl px-4 ${scrolled ? "" : ""}`}>
+      <div className="mx-auto max-w-6xl px-4">
         <div className="glass-strong flex items-center justify-between rounded-2xl px-5 py-3">
           <a href="#home" className="flex items-center gap-2">
             <motion.div
               animate={{ rotate: [0, 8, -8, 0] }}
-              transition={{ duration: 6, repeat: Infinity }}
-              className="relative"
+              transition={{ duration: 5, repeat: Infinity }}
+              className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--blink-yellow)] shadow-soft"
             >
-              <div className="absolute inset-0 rounded-full bg-[var(--cyan-glow)] opacity-40 blur-md" />
-              <Cloud className="relative h-7 w-7 text-[var(--cyan-glow)]" strokeWidth={1.5} />
+              <Zap className="h-4 w-4 fill-[var(--blink-green-deep)] text-[var(--blink-green-deep)]" strokeWidth={2} />
             </motion.div>
             <span className="font-display text-lg font-bold tracking-tight">
-              <span className="text-gradient-cyan">cloud</span>
-              <span className="text-foreground">.dev</span>
+              <span className="text-[var(--blink-green-deep)]">naveen</span>
+              <span className="text-foreground">.cloud</span>
             </span>
           </a>
           <div className="hidden items-center gap-1 md:flex">
@@ -40,7 +39,7 @@ export function Navbar() {
               <a
                 key={l}
                 href={`#${l.toLowerCase()}`}
-                className="rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+                className="rounded-lg px-3 py-1.5 text-sm font-medium text-foreground/65 transition-colors hover:bg-[var(--blink-yellow)]/40 hover:text-foreground"
               >
                 {l}
               </a>
@@ -48,7 +47,7 @@ export function Navbar() {
           </div>
           <a
             href="#contact"
-            className="rounded-lg bg-[var(--aws-orange)] px-4 py-1.5 text-sm font-semibold text-[var(--deep-navy)] transition-all hover:glow-orange"
+            className="rounded-lg bg-[var(--blink-green)] px-4 py-1.5 text-sm font-bold text-[var(--cloud-white)] transition-all hover:glow-cyan"
           >
             Hire Me
           </a>

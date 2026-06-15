@@ -3,34 +3,46 @@ import { Github, ExternalLink, GitBranch } from "lucide-react";
 
 const projects = [
   {
-    name: "MedInfo App",
-    tag: "Healthcare · Serverless",
-    problem: "Doctors needed a HIPAA-aligned platform to surface drug interactions in under 200ms.",
-    stack: ["Lambda", "DynamoDB", "API Gateway", "Cognito", "CloudFront"],
-    features: ["Realtime drug lookup", "Role-based access", "Audit logs", "Multi-AZ failover"],
+    name: "MedInfo",
+    tag: "Mobile · Healthcare",
+    problem: "A cross-platform mobile app to help users quickly look up medicine dosage, precautions and side-effects.",
+    stack: ["Flutter", "Dart", "Firebase", "SQL"],
+    features: [
+      "Secure login & real-time data sync",
+      "Roles: visitor, owner, admin",
+      "Clean UI for fast medicine search",
+      "Scalable for future symptom checker",
+    ],
+    nodes: ["User", "App", "Auth", "DB", "Alerts"],
   },
   {
     name: "Sales Analytics Dashboard",
-    tag: "Data · BI",
-    problem: "A 50-person sales team had no single source of truth for pipeline forecasting.",
-    stack: ["Glue", "Redshift", "QuickSight", "S3", "Terraform"],
-    features: ["ETL pipeline", "Real-time KPIs", "Forecast modelling", "SSO"],
+    tag: "Data · Business Intelligence",
+    problem: "An interactive Power BI dashboard to monitor monthly sales, profit and regional performance for a small business.",
+    stack: ["Power BI", "Excel", "DAX", "SQL"],
+    features: [
+      "Cleaned raw sales data in Excel & Power Query",
+      "DAX measures for revenue, margin, growth",
+      "Bar / line charts + KPI cards",
+      "Insights on top products & regions",
+    ],
+    nodes: ["Excel", "ETL", "Model", "DAX", "Report"],
   },
 ];
 
 function Pipeline() {
   return (
     <div className="flex items-center gap-1.5 font-mono text-[10px]">
-      {["build", "test", "deploy"].map((s, i) => (
+      {["clean", "model", "publish"].map((s, i) => (
         <motion.div
           key={s}
           initial={{ opacity: 0.3 }}
-          whileInView={{ opacity: [0.3, 1, 0.6] }}
+          whileInView={{ opacity: [0.3, 1, 0.7] }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.4, duration: 1 }}
-          className="flex items-center gap-1 rounded-full bg-green-500/10 px-2 py-0.5 text-green-400"
+          className="flex items-center gap-1 rounded-full bg-[var(--blink-green)]/12 px-2 py-0.5 font-semibold text-[var(--blink-green-deep)]"
         >
-          <span className="h-1 w-1 rounded-full bg-green-400" />
+          <span className="h-1 w-1 rounded-full bg-[var(--blink-green)]" />
           {s}
         </motion.div>
       ))}
@@ -48,11 +60,11 @@ export function Projects() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-mono text-[var(--cyan-glow)]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-mono font-semibold text-[var(--blink-green)]">
             03 — PROJECTS
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-            Enterprise <span className="text-gradient-cyan">cloud solutions</span>.
+            Things I've <span className="text-gradient-cyan">built so far</span>.
           </h2>
         </motion.div>
 
@@ -68,39 +80,39 @@ export function Projects() {
               style={{ transformStyle: "preserve-3d" }}
               className="glass group relative overflow-hidden rounded-3xl p-7"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--cyan-glow)]/0 to-[var(--aws-orange)]/0 opacity-0 transition-opacity group-hover:opacity-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--blink-yellow)]/0 to-[var(--blink-green)]/0 opacity-0 transition-opacity group-hover:opacity-15" />
 
               <div className="relative">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <div className="font-mono text-xs text-[var(--cyan-glow)]">{p.tag}</div>
+                    <div className="font-mono text-xs font-semibold text-[var(--blink-green)]">{p.tag}</div>
                     <h3 className="mt-1 font-display text-2xl font-bold">{p.name}</h3>
                   </div>
-                  <GitBranch className="h-5 w-5 text-muted-foreground" />
+                  <GitBranch className="h-5 w-5 text-foreground/50" />
                 </div>
 
-                <p className="text-sm text-muted-foreground">{p.problem}</p>
+                <p className="text-sm text-foreground/70">{p.problem}</p>
 
-                {/* Architecture diagram mini */}
-                <div className="my-5 rounded-xl bg-white/[0.03] p-4">
+                {/* Architecture mini diagram */}
+                <div className="my-5 rounded-xl bg-[var(--blink-yellow)]/20 p-4">
                   <div className="mb-3 flex items-center justify-between">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">architecture</span>
+                    <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-foreground/55">flow</span>
                     <Pipeline />
                   </div>
                   <svg viewBox="0 0 280 60" className="h-14 w-full">
-                    {["User", "CDN", "API", "λ", "DB"].map((label, idx) => {
-                      const x = 20 + idx * 60;
+                    {p.nodes.map((label, idx) => {
+                      const x = 28 + idx * 56;
                       return (
                         <g key={idx}>
                           {idx > 0 && (
-                            <line x1={x - 60 + 14} y1={30} x2={x - 14} y2={30}
-                              stroke="oklch(0.82 0.18 210 / 0.5)" strokeWidth="1.5"
+                            <line x1={x - 56 + 16} y1={30} x2={x - 16} y2={30}
+                              stroke="oklch(0.55 0.18 145 / 0.55)" strokeWidth="1.5"
                               strokeDasharray="3 3">
                               <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite" />
                             </line>
                           )}
-                          <circle cx={x} cy={30} r="13" fill="oklch(0.2 0.04 260)" stroke="oklch(0.82 0.18 210 / 0.6)" />
-                          <text x={x} y={34} textAnchor="middle" fontSize="9" fill="oklch(0.82 0.18 210)" fontFamily="monospace">{label}</text>
+                          <circle cx={x} cy={30} r="15" fill="oklch(1 0 0 / 0.85)" stroke="oklch(0.55 0.18 145 / 0.7)" />
+                          <text x={x} y={33} textAnchor="middle" fontSize="8" fill="oklch(0.3 0.1 145)" fontFamily="monospace" fontWeight="600">{label}</text>
                         </g>
                       );
                     })}
@@ -109,27 +121,27 @@ export function Projects() {
 
                 <div className="mb-5 flex flex-wrap gap-1.5">
                   {p.stack.map((t) => (
-                    <span key={t} className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
+                    <span key={t} className="rounded-full bg-[var(--blink-yellow)]/40 px-2.5 py-1 text-[11px] font-semibold text-foreground/75">
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <ul className="mb-6 space-y-1.5 text-sm text-muted-foreground">
+                <ul className="mb-6 space-y-1.5 text-sm text-foreground/70">
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[var(--aws-orange)]" />
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--blink-green)]" />
                       {f}
                     </li>
                   ))}
                 </ul>
 
                 <div className="flex gap-2">
-                  <a href="#" className="inline-flex items-center gap-1.5 rounded-lg bg-white/5 px-3 py-1.5 text-xs font-medium transition-colors hover:bg-white/10">
+                  <a href="https://github.com/naveenkumar319" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-foreground/5 px-3 py-1.5 text-xs font-semibold transition-colors hover:bg-foreground/10">
                     <Github className="h-3.5 w-3.5" /> Source
                   </a>
-                  <a href="#" className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--aws-orange)] px-3 py-1.5 text-xs font-semibold text-[var(--deep-navy)]">
-                    <ExternalLink className="h-3.5 w-3.5" /> Live Demo
+                  <a href="https://github.com/naveenkumar319" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--blink-green)] px-3 py-1.5 text-xs font-semibold text-[var(--cloud-white)]">
+                    <ExternalLink className="h-3.5 w-3.5" /> View
                   </a>
                 </div>
               </div>
