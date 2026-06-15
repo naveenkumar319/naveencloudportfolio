@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Cloud, Code2, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
+import { ArrowRight, Cloud, Code2, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
 import naveen from "@/assets/naveen.png.asset.json";
 
 const titles = [
