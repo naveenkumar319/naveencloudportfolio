@@ -16,10 +16,10 @@ import { CursorGlow } from "@/components/portfolio/CursorGlow";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alex Cloud — AWS Cloud & DevOps Engineer" },
-      { name: "description", content: "Senior Cloud & DevOps Engineer specializing in AWS architecture, Kubernetes, Terraform and CI/CD automation." },
-      { property: "og:title", content: "Alex Cloud — AWS Cloud & DevOps Engineer" },
-      { property: "og:description", content: "Designing, automating and scaling resilient infrastructure on AWS." },
+      { title: "Akiti Naveenkumar — Aspiring Cloud Engineer & Data Science Student" },
+      { name: "description", content: "Portfolio of Akiti Naveenkumar — B.Tech CSE (Data Science) student from Guntur, India. Aspiring AWS cloud engineer with projects in Flutter, Power BI and Python." },
+      { property: "og:title", content: "Akiti Naveenkumar — Aspiring Cloud Engineer" },
+      { property: "og:description", content: "Fresher portfolio: AWS basics, Python, Power BI, Flutter — open to internships and entry-level cloud roles." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

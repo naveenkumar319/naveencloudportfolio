@@ -10,11 +10,12 @@ export function CursorGlow() {
   }, []);
   return (
     <motion.div
-      className="pointer-events-none fixed z-[100] h-[400px] w-[400px] rounded-full opacity-30 mix-blend-screen"
+      className="pointer-events-none fixed z-[100] h-[420px] w-[420px] rounded-full opacity-50 mix-blend-multiply"
       style={{
-        background: "radial-gradient(circle, oklch(0.82 0.18 210 / 0.4), transparent 60%)",
+        background:
+          "radial-gradient(circle, oklch(0.85 0.2 92 / 0.55), oklch(0.7 0.18 145 / 0.15) 45%, transparent 70%)",
       }}
-      animate={{ x: pos.x - 200, y: pos.y - 200 }}
+      animate={{ x: pos.x - 210, y: pos.y - 210 }}
       transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.5 }}
     />
   );

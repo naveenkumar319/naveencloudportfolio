@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 const certs = [
-  { name: "AWS Solutions Architect — Professional", org: "Amazon Web Services", color: "var(--aws-orange)" },
-  { name: "AWS DevOps Engineer — Professional", org: "Amazon Web Services", color: "var(--aws-orange)" },
-  { name: "AWS Certified Security — Specialty", org: "Amazon Web Services", color: "var(--aws-orange)" },
-  { name: "Machine Learning Specialization", org: "Coursera · Stanford", color: "var(--cyan-glow)" },
-  { name: "Generative AI with LLMs", org: "DeepLearning.AI", color: "var(--cyan-glow)" },
-  { name: "Cloud Security Fundamentals", org: "ISC2", color: "var(--cyan-glow)" },
-  { name: "Microsoft Power BI Data Analyst", org: "Microsoft", color: "var(--cyan-glow)" },
-  { name: "Python for Data Science", org: "IBM", color: "var(--cyan-glow)" },
+  { name: "Machine Learning Onramp", org: "MathWorks", accent: "green" },
+  { name: "Generative AI Literacy", org: "FutureSkills Prime · NASSCOM", accent: "yellow" },
+  { name: "Cloud Security Basics", org: "Microsoft", accent: "green" },
+  { name: "Power BI for Beginners", org: "Microsoft · Simplilearn", accent: "yellow" },
+  { name: "Python Programming", org: "GeeksforGeeks", accent: "green" },
+  { name: "Digital Applications Fundamentals (STEM)", org: "FutureSkills Prime", accent: "yellow" },
+  { name: "Microsoft Learnathon ’25 — AI & GenAI", org: "Microsoft", accent: "green" },
 ];
 
 export function Certifications() {
@@ -22,11 +21,11 @@ export function Certifications() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-mono text-[var(--cyan-glow)]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-mono font-semibold text-[var(--blink-green)]">
             05 — CERTIFICATIONS
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-            Credentials, <span className="text-gradient-orange">earned</span>.
+            Things I've <span className="text-gradient-orange">learned</span>.
           </h2>
         </motion.div>
 
@@ -45,10 +44,14 @@ export function Certifications() {
               whileHover={{ scale: 1.03 }}
               className="glass group relative overflow-hidden rounded-2xl p-5"
             >
-              <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-              <Award className="mb-3 h-6 w-6" style={{ color: `var(--${c.color === "var(--aws-orange)" ? "aws-orange" : "cyan-glow"})` }} strokeWidth={1.5} />
+              <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+              <Award
+                className="mb-3 h-6 w-6"
+                style={{ color: c.accent === "green" ? "var(--blink-green)" : "var(--blink-yellow-deep)" }}
+                strokeWidth={1.8}
+              />
               <div className="text-sm font-semibold leading-tight">{c.name}</div>
-              <div className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{c.org}</div>
+              <div className="mt-2 font-mono text-[10px] font-semibold uppercase tracking-wider text-foreground/55">{c.org}</div>
             </motion.div>
           ))}
         </div>
