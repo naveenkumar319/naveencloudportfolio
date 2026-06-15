@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Cloud, Code2, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
+import { ArrowRight, Cloud, Code2, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
 import naveen from "@/assets/naveen.png.asset.json";
 
 const titles = [
@@ -171,12 +171,6 @@ export function Hero() {
             >
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-[var(--blink-yellow)] px-6 py-3 text-sm font-semibold text-[var(--deep-navy)] transition-all hover:glow-orange"
-            >
-              <Download className="h-4 w-4" /> Resume
             </a>
           </motion.div>
 
