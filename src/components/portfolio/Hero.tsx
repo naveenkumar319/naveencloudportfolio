@@ -147,6 +147,7 @@ export function Hero() {
             className="mt-6 text-lg text-foreground/70 md:text-xl"
           >
             I'm an <Typer />
+            {"\n"}
           </motion.p>
 
           <motion.p
