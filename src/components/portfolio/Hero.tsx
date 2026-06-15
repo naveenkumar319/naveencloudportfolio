@@ -53,9 +53,9 @@ function ArchitectureCanvas() {
       <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
         <defs>
           <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0" />
-            <stop offset="50%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="oklch(0.55 0.18 145)" stopOpacity="0" />
+            <stop offset="0%" stopColor="oklch(0.6 0.14 245)" stopOpacity="0" />
+            <stop offset="50%" stopColor="oklch(0.6 0.14 245)" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="oklch(0.6 0.14 245)" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[
@@ -69,7 +69,7 @@ function ArchitectureCanvas() {
           ["85%", "15%", "15%", "75%"],
         ].map(([x1, y1, x2, y2], i) => (
           <g key={i}>
-            <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="oklch(0.55 0.18 145 / 0.18)" strokeWidth="1" />
+            <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="oklch(0.6 0.14 245 / 0.18)" strokeWidth="1" />
             <line
               x1={x1} y1={y1} x2={x2} y2={y2}
               stroke="url(#line)"
@@ -206,9 +206,9 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            <div className="absolute -inset-8 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.87_0.18_92),oklch(0.55_0.18_145),oklch(0.78_0.2_80),oklch(0.87_0.18_92))] opacity-60 blur-2xl" />
+            <div className="absolute -inset-8 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.82_0.12_245),oklch(0.55_0.14_245),oklch(0.75_0.12_250),oklch(0.82_0.12_245))] opacity-60 blur-2xl" />
             <div className="relative h-80 w-80 rounded-full p-[3px]">
-              <div className="absolute inset-0 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.87_0.18_92),oklch(0.55_0.18_145),oklch(0.78_0.2_80),oklch(0.87_0.18_92))]" />
+              <div className="absolute inset-0 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,oklch(0.82_0.12_245),oklch(0.55_0.14_245),oklch(0.75_0.12_250),oklch(0.82_0.12_245))]" />
               <div className="relative h-full w-full overflow-hidden rounded-full bg-[var(--blink-yellow)] ring-4 ring-white/60">
                 <img
                   src={naveen.url}

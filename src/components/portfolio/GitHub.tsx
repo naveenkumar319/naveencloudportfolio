@@ -15,11 +15,11 @@ function ContribGrid() {
         const intensity = Math.random();
         const level = intensity > 0.78 ? 4 : intensity > 0.55 ? 3 : intensity > 0.32 ? 2 : intensity > 0.15 ? 1 : 0;
         const colors = [
-          "oklch(0.92 0.04 100)",
-          "oklch(0.85 0.12 110)",
-          "oklch(0.78 0.16 130)",
-          "oklch(0.65 0.18 140)",
-          "oklch(0.5 0.18 148)",
+          "oklch(0.92 0.04 250)",
+          "oklch(0.85 0.1 245)",
+          "oklch(0.75 0.12 245)",
+          "oklch(0.6 0.14 245)",
+          "oklch(0.45 0.14 250)",
         ];
         return (
           <motion.div
@@ -74,11 +74,11 @@ export function GitHub() {
               <span>less</span>
               {[0, 1, 2, 3, 4].map((l) => {
                 const colors = [
-                  "oklch(0.92 0.04 100)",
-                  "oklch(0.85 0.12 110)",
-                  "oklch(0.78 0.16 130)",
-                  "oklch(0.65 0.18 140)",
-                  "oklch(0.5 0.18 148)",
+                  "oklch(0.92 0.04 250)",
+                  "oklch(0.85 0.1 245)",
+                  "oklch(0.75 0.12 245)",
+                  "oklch(0.6 0.14 245)",
+                  "oklch(0.45 0.14 250)",
                 ];
                 return <span key={l} className="h-2.5 w-2.5 rounded-[2px]" style={{ background: colors[l] }} />;
               })}

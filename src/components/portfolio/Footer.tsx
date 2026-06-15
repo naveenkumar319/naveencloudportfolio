@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-foreground/5 py-12">
       <div className="absolute inset-x-0 bottom-0 h-40 opacity-30" aria-hidden>
         <svg viewBox="0 0 1200 160" preserveAspectRatio="none" className="h-full w-full">
-          <path d="M0,80 C150,120 300,40 450,80 C600,120 750,40 900,80 C1050,120 1200,40 1200,80 L1200,160 L0,160 Z" fill="oklch(0.55 0.18 145)" />
-          <path d="M0,100 C200,140 400,60 600,100 C800,140 1000,60 1200,100 L1200,160 L0,160 Z" fill="oklch(0.87 0.18 92)" fillOpacity="0.7" />
+          <path d="M0,80 C150,120 300,40 450,80 C600,120 750,40 900,80 C1050,120 1200,40 1200,80 L1200,160 L0,160 Z" fill="oklch(0.58 0.14 245)" />
+          <path d="M0,100 C200,140 400,60 600,100 C800,140 1000,60 1200,100 L1200,160 L0,160 Z" fill="oklch(0.75 0.1 245)" fillOpacity="0.7" />
         </svg>
       </div>
 
@@ -20,7 +20,7 @@ export function Footer() {
           </span>
         </div>
         <p className="text-xs font-medium text-foreground/60">
-          © {new Date().getFullYear()} Akiti Naveenkumar · Built with\u00a0 & ⚡ from Guntur, IN.
+          © {new Date().getFullYear()} Akiti Naveenkumar · Built with&nbsp; & ⚡ from Guntur, IN.
         </p>
       </div>
     </footer>
