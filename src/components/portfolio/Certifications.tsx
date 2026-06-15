@@ -35,11 +35,13 @@ export function Certifications() {
             <motion.div
               key={c.name}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              animate={{ y: [0, -6, 0] }}
-              {...{ transition: { y: { duration: 4 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }, opacity: { duration: 0.5, delay: i * 0.06 } } }}
+              animate={{ y: [0, -6, 0], opacity: 1 }}
+              transition={{
+                y: { duration: 4 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 },
+                opacity: { duration: 0.5, delay: i * 0.06 },
+              }}
               whileHover={{ scale: 1.03 }}
               className="glass group relative overflow-hidden rounded-2xl p-5"
             >
