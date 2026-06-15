@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const links = ["Home", "About", "Skills", "Projects", "Experience", "Certifications", "Contact"];
+const links = ["Home", "About", "Skills", "Projects", "Internships", "Journey", "Certifications", "Contact"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
