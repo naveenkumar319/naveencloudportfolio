@@ -31,7 +31,7 @@ export function Navbar() {
             </motion.div>
             <span className="font-display text-lg font-bold tracking-tight">
               <span className="text-[var(--blink-green-deep)]">naveen</span>
-              <span className="text-foreground">.cloud</span>
+              <span className="text-foreground"></span>
             </span>
           </a>
           <div className="hidden items-center gap-1 md:flex">
